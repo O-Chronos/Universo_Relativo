@@ -1,0 +1,99 @@
+:root{
+
+    --time-earth: 0s;
+    --time-other: 0s;
+
+}
+
+body{
+
+    animation-name: fade_in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    background-color: #252525;
+    border: none;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+#container{
+
+    width: 100%;
+    height: 102vh;
+    margin-top: -3vh;
+    
+}
+
+#top_side{
+
+    display: inline-flex;
+
+
+}
+
+#left_side{
+
+    width: 50vw;
+    height: 102.5vh;
+    border-right-style: solid ;
+    border-right-width: 1px;
+    border-right-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white;
+
+}
+
+#right_side{
+
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white;
+    width: 50vw;
+    height: 102.5vh;
+    background-image: url("../img/spaceship.jpg");
+    background-size: cover;
+    background-position: -150px;
+
+}
+
+#relogio-1, #relogio-2{
+
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    width: 20vw;
+    height: 10vw;
+    text-align: center;
+    position: relative;
+    line-height: 4vw;
+
+}
+
+#relogio-1{
+
+    top: 40vh;
+    left: 15vw;
+
+}
+
+#relogio-2{
+
+    top: 40vh;
+    left: 15vw;
+
+}
+
+#buttons{
+
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    text-align: center;
+
+}

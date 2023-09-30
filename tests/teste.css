@@ -1,0 +1,130 @@
+:root{
+
+    --time-earth: 0s;
+    --time-other: 0s;
+
+}
+
+body{
+
+    background-color: #252525;
+
+}
+
+#container{
+
+    position: absolute;
+    left: 40vw;
+    top: 13vw;
+
+}
+
+#relogio-1, #relogio-2{
+
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    width: 20vw;
+    height: 10vw;
+    text-align: center;
+    line-height: 4vw;
+
+}
+
+#relogio-2{
+
+    margin-top: 5vw;
+
+}
+
+.timer{
+
+    font-size: 5vw;
+    position: relative;
+
+}
+
+.buttons{
+
+    position: relative;
+    left: -5vw;
+    margin-top: 2vw;
+    margin-left: 0vw;
+    width: 10vw;
+    height: 5vw;
+
+}
+
+.buttons:hover{
+
+    background-color: green;
+    cursor: pointer;
+
+}
+
+#quadrado1{
+
+    width: 5vw;
+    height: 5vw;
+    background-color: red;
+    margin: 1vw;
+    position: relative;
+    box-shadow: 0 0 5em red;
+    left: 0;
+
+}
+
+#quadrado2{
+
+    width: 5vw;
+    height: 5vw;
+    background-color: #0800ff;
+    margin: 1vw;
+    box-shadow: 0 0 5em blue;
+    position: relative;
+    left: 0;
+
+}
+
+#quadrado1-start{
+
+    width: 5vw;
+    height: 5vw;
+    background-color: red;
+    margin: 1vw;
+    animation-name: walk;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-duration: var(--time-earth);
+    animation-iteration-count: infinite;
+    position: relative;
+    box-shadow: 0 0 5em red;
+    left: 0;
+
+}
+
+#quadrado2-start{
+
+    width: 5vw;
+    height: 5vw;
+    background-color: #0800ff;
+    margin: 1vw;
+    box-shadow: 0 0 5em blue;
+    animation-name: walk;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-duration: var(--time-other);
+    animation-iteration-count: infinite;
+    position: relative;
+    left: 0;
+
+}
+
+@keyframes walk{
+
+    0%{left: 0}
+    50%{left: 90vw; }
+    100%{left: 0; }
+
+}
