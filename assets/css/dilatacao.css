@@ -1,3 +1,16 @@
+@font-face {
+    font-family: Clock;
+    src: url("../fonts/alarm_clock.ttf");
+ }
+ @font-face {
+    font-family: Trans;
+    src: url("../fonts/Transformers\ Movie.ttf");
+ }
+ @font-face {
+    font-family: Pixel;
+    src: url("../fonts/OTF/dogica.otf");
+ }
+
 :root{
 
     --time-earth: 0s;
@@ -35,7 +48,7 @@ body{
 
 #left_side{
 
-    width: 50vw;
+    width: 49.5vw;
     height: 102.5vh;
     border-right-style: solid ;
     border-right-width: 1px;
@@ -43,6 +56,11 @@ body{
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: white;
+    background-image: url("../img/quarto.jfif");
+    background-size: cover;
+    background-position: -75px;
+    z-index: 1;
+    box-shadow: 0 0 5em lightgoldenrodyellow
 
 }
 
@@ -54,39 +72,82 @@ body{
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: white;
-    width: 50vw;
-    height: 102.5vh;
-    background-image: url("../img/spaceship.jpg");
+    width: 49.3vw;
+    height: 102.5vh;;
+
+}
+
+#back{
+
+    right: 8.3vw;
+    top: 17vh;
+    position: absolute;
+    width: 27vw;
+    height: 27vw;
+    background-image: url("../img/aceleracao.jfif");
     background-size: cover;
-    background-position: -150px;
+    background-position: 0px;
+    animation: back 0.1s infinite forwards linear;
+    
+}
+
+#content{
+
+    width: 49.3vw;
+    height: 102.5vh;
+    position: relative;
+    background-image: url("../img/galaxia.jfif");
+    background-size: cover;
+    background-position: 0px;
+
 
 }
 
 #relogio-1, #relogio-2{
 
-    background-color: white;
-    border-color: black;
-    border-style: solid;
-    border-width: 2px;
-    width: 20vw;
-    height: 10vw;
+    
+    
     text-align: center;
     position: relative;
-    line-height: 4vw;
-
+    
 }
 
 #relogio-1{
 
-    top: 40vh;
-    left: 15vw;
+    font-family: Clock;
+    background-color: #282828;
+    line-height: 3vw;
+    color: green;
+    text-shadow: 0 0 0.5em green;
+    top: 53vh;
+    left: 10.99vw;
+    width: 4.8vw;
+    height: 5.5vh;
 
 }
 
 #relogio-2{
 
-    top: 40vh;
-    left: 15vw;
+    background-image: url("../img/hologram.png");
+    background-size: cover;
+    background-position: -0px;
+    top: 45vh;
+    left: 17.6vw;
+    width: 20vw;
+    height: 20vw;
+    line-height: 19vh;
+    font-size: 5vh;
+    font-family: Clock;
+    color: darkblue;
+    text-shadow: 0 0 0.5em blue;
+
+}
+
+#timer-2{
+
+    position: relative;
+    left: -0vw;
+    top: -3.5vh;
 
 }
 
@@ -95,5 +156,54 @@ body{
     margin-top: 2vh;
     margin-bottom: 2vh;
     text-align: center;
+
+}
+
+#earth-stay{
+
+    position: absolute;
+    width: 20vw;
+    height: 15vh;
+    background-color: transparent;
+    border: none;
+    left: 15vw;
+    top: 12vh;
+    background-image: url("../img/botao_2.png");
+    background-size: cover;
+    font-family: Pixel;
+    font-size: 1.3vw;
+    
+}
+
+#space-stay{
+
+    text-shadow: 0 0 1em white;
+    font-family: Trans;
+    font-size: 2.5vw;
+    position: absolute;
+    width: 20vw;
+    height: 15vh;
+    right: 12vw;
+    top: 15vh;
+    background-color: transparent;
+    background-image: url("../img/botao_1.png");
+    background-size: cover;
+    color: white;
+    border: none;
+    
+}
+
+
+
+
+
+
+@keyframes back {
+    
+    to{
+
+        transform: rotate(360deg);
+
+    }
 
 }

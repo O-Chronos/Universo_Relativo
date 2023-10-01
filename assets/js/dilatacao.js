@@ -45,7 +45,7 @@ let DeltaT_3 = DeltaT * Math.sqrt(1-((2*G*M3)/(r3*Math.pow(C, 2))));
 
 let v;
 let DeltaT_;
-v = C*0.999;
+v = C*0.5;
 DeltaT_ = DeltaT / (Math.sqrt(1 - Math.pow(v / C, 2)));
 
 let hour_earth = 0;
@@ -89,14 +89,16 @@ function reset() {
      minute_other = 0;
      second_other = 0;
      millisecond_other = 0;
+     document.getElementById('hour-other').innerText = '00';
+     document.getElementById('minute-other').innerText = '00';
+     document.getElementById('second-other').innerText = '00';
+     document.getElementById('millisecond-other').innerText = '000';
+
     document.getElementById('hour-earth').innerText = '00';
     document.getElementById('minute-earth').innerText = '00';
     document.getElementById('second-earth').innerText = '00';
     document.getElementById('millisecond-earth').innerText = '000';
-    document.getElementById('hour-other').innerText = '00';
-    document.getElementById('minute-other').innerText = '00';
-    document.getElementById('second-other').innerText = '00';
-    document.getElementById('millisecond-other').innerText = '000';
+    
 }
 function timer_earth() {
     if ((millisecond_earth += 10) === 1000) {
