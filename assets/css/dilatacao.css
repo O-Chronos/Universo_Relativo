@@ -10,6 +10,18 @@
     font-family: Pixel;
     src: url("../fonts/OTF/dogica.otf");
  }
+@font-face {
+    font-family: Nasa;
+    src: url("../fonts/nasalization-rg.otf");
+}
+@font-face {
+    font-family: Jedi;
+    src: url(../fonts/jedi/starjedi/Starjhol.ttf);
+}
+@font-face {
+    font-family: TT;
+    src: url(../fonts/TT/TT\ Octosquares\ Trial\ Medium.ttf);
+}
 
 :root{
 
@@ -60,7 +72,7 @@ body{
     background-size: cover;
     background-position: -75px;
     z-index: 1;
-    box-shadow: 0 0 5em lightgoldenrodyellow
+    box-shadow: 2em 2em 5em lightgoldenrodyellow inset;
 
 }
 
@@ -175,6 +187,13 @@ body{
     
 }
 
+#earth-stay:hover{
+
+    transform: scale(1.05);
+    cursor: pointer;
+    
+}
+
 #space-stay{
 
     text-shadow: 0 0 1em white;
@@ -193,10 +212,249 @@ body{
     
 }
 
+#space-stay:hover{
+
+    transform: scale(1.05);
+    cursor: pointer;
+    
+}
+
+#start{
+
+    font-family: Nasa;
+    font-size: 1.4vw;
+    color: rgb(37, 23, 9);
+    text-shadow: 0em 0em 1em rgb(37, 23, 9);
+    z-index: 2;
+    position: absolute;
+    left: 45vw;
+    top: 70vh;
+    width: 9vw;
+    height: 9vw;
+    border-radius: 100%;
+    background-image: url("../img/relogio_3.webp");
+    background-size: cover;
+    background-color: white;
+    border-style: solid;
+    border-width: 0.5em;
+    border-color: rgb(37, 23, 9);
+    box-shadow: 0em 0em 1em rgb(37, 23, 9);
+
+}
+
+#start:hover{
+
+    animation: rotate 0.4s infinite forwards linear;
+    cursor: pointer;
+    
+}
+
+#pause{
+
+    font-family: Trans;
+    font-size: 1.5vw;
+    color: darkblue;
+    text-shadow: 0 0 1em blue;
+    z-index: 2;
+    position: absolute;
+    left: 45vw;
+    top: 70vh;
+    width: 9vw;
+    height: 9vw;
+    background-image: url("../img/botao_hologram.png");
+    background-size: cover;
+    background-color: none;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 0.2em;
+    border-color: rgb(0, 255, 242);
+    box-shadow: 0em 0em 2em rgb(0, 255, 242);
+
+}
 
 
+#pause:hover{
 
+    animation: pause 0.1s forwards linear;
+    animation-iteration-count: unset;
+    cursor: pointer;
+    
+}
 
+#start_2{
+
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    font-family: Pixel;
+    font-size: 1vw;
+    color: black;
+    text-shadow: 0 0 1em black;
+    z-index: 2;
+    position: absolute;
+    left: 40.5vw;
+    top: 70vh;
+    width: 9vw;
+    height: 7vw;
+    background-color: rgba(217,214,204,255);
+    background-size: cover;
+    border-style: solid;
+    border-top-width: 1.5vw;
+    border-right-width: 0.1em;
+    border-color: #04bb63;
+    
+}
+
+#start_2:hover{
+
+    animation: start_2 0.1s forwards linear;
+    animation-iteration-count: unset;
+    cursor: pointer;
+
+}
+
+#reset{
+    
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    background-image: url("../img/back_button.jfif");
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    font-family: Trans;
+    font-size: 2vw;
+    color: white;
+    text-shadow: 0 0 1em blue;
+    z-index: 2;
+    position: absolute;
+    right: 41.5vw;
+    top: 70vh;
+    width: 9vw;
+    height: 7vw;
+    border-style: solid;
+    border-width: 0.05em;
+    border-left-width: 0.1em;
+    border-color: rgb(0, 255, 242);
+}
+
+#reset:hover{
+
+    animation: reset 0.1s forwards linear;
+    animation-iteration-count: unset;
+    cursor: pointer;
+
+}
+
+#bottom-side{
+
+    height: 310vh;
+    background-image: url("../img/universe_3.jpg");
+    background-size:contain;
+    margin-top: -5.4vh;
+
+}
+
+#explicacao{
+
+    position: relative;
+    font-size: x-large;
+    width: 90vw;
+    height: 100vh;
+    text-align: justify;
+    margin-left: 5vw;
+    color: white;
+    border-radius: 5%;
+    top: 5vh;
+
+}
+
+#title, #experimento, .text, #manual, .subtitle{
+
+    margin-left: 3vw;
+    margin-top: 3vw;
+    margin-bottom: 0vw;
+
+}
+
+.subtitle{
+
+    font-family: Nasa;
+    color: yellow;
+    text-shadow: 0 0 1em yellow;
+
+}
+
+.text2{
+
+    font-family: TT;
+    margin-left: 6vw;
+    margin-top: 1vw;
+
+}
+
+#title, #experimento, #manual{
+
+    color: yellow;
+    text-align: center;
+    font-family: Jedi;
+    text-shadow: 0 0 1em yellow;
+
+}
+
+#experimento{
+
+    margin-bottom: -7vh;
+
+}
+
+.text{
+    
+    font-family: TT;
+    line-height: 5vh;
+    
+}
+
+#speedster{
+
+    width: 50vh;
+    height: 50vh;
+    z-index: 2;
+    position: absolute;
+    top: 25vh;
+    left: 36vw;
+    background-image: url("../img/aba.png");
+    background-size: 50vh;
+
+}
+
+#speed_text{
+
+    margin-top: 10vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+
+}
+
+@keyframes rotate {
+    
+    from{color: transparent;}
+    to{transform: rotate(720deg); color: transparent;}
+
+}
+
+@keyframes pause {
+    to{transform: scale(1.1); box-shadow: 0em 0em 4em rgb(0, 255, 242);}
+}
+
+@keyframes start_2 {
+
+    to{border-color: blueviolet; box-shadow: 0 0 4em blueviolet;}
+}
+
+@keyframes reset {
+    to{box-shadow: 0em 0em 2em darkblue;
+    color: transparent;
+    border-color: darkblue;}
+}
 
 @keyframes back {
     
