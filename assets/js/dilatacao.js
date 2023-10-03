@@ -1,3 +1,5 @@
+//#region variaveis fisica
+
 let G = 6.6743* Math.pow( 10, -11);
 let C = 299792458;
 let M ;
@@ -19,13 +21,18 @@ let forcaGSol = (G*SolM)/Math.pow(SolR, 2);
 let forcaGNetuno = (G*NetunoM)/Math.pow(NetunoR, 2);
 let forcaGTerra = (G*TerraM)/Math.pow(TerraR, 2);
 
+
+let DeltaT = 10.1;
+
 console.log(forcaGTerra.toFixed(1));
 console.log(forcaGNetuno.toFixed(1));
 console.log(forcaGSol.toFixed(1));
 
+//#endregion
+
 //relatividade com gravidade + calculo da força gravitacional de um planeta
 
-let DeltaT = 10.1;
+/*
 let M1 = TerraM_2;
 let r1 = TerraR_2;
 let M2 = NetunoM_2;
@@ -38,10 +45,158 @@ let SA = 3.156*Math.pow(10, 7);
 let DeltaT_1 = DeltaT * Math.sqrt(1-((2*G*M1)/(r1*Math.pow(C, 2))));
 let DeltaT_2 = DeltaT * Math.sqrt(1-((2*G*M2)/(r2*Math.pow(C, 2))));
 let DeltaT_3 = DeltaT * Math.sqrt(1-((2*G*M3)/(r3*Math.pow(C, 2))));
+*/
 
-//endregion
+//#region criação e remoção de objetos
 
+//#region selecionar
+let left_side = document.querySelector("#left_side");
+let right_side = document.querySelector("#right_side");
+let content = document.querySelector("#content");
+let top_side = document.querySelector("#top_side");
 
+//#endregion
+
+//#region criar
+let earth_stay = document.createElement("button");
+let button_text = document.createElement("p");
+let back = document.createElement("div");
+let space_stay = document.createElement("button");
+let form_main = document.createElement("form");
+let speedster = document.createElement("div");
+let speed_text = document.createElement("h1");
+let speed_2 = document.createElement("label");
+let speed = document.createElement("input");
+let speed_button = document.createElement("input");
+let speed_value = document.createElement("p");
+let start_button = document.createElement("button");
+let pause_button = document.createElement("button");
+let start_2_button = document.createElement("button");
+let reset_button = document.createElement("button");
+//#endregion
+
+//#region atributos
+
+earth_stay.setAttribute("id", "earth-stay");
+
+button_text.setAttribute("id", "button_text");
+
+back.setAttribute("id", "back");
+
+space_stay.setAttribute("id", "space-stay");
+
+form_main.setAttribute("name", "form_main");
+form_main.setAttribute("id", "buttons");
+
+speedster.setAttribute("id", "speedster");
+
+speed_text.setAttribute("id", "speed_text");
+
+speed_2.setAttribute("for", "speed");
+speed_2.setAttribute("id", "speed_2");
+
+speed.setAttribute("type", "range");
+speed.setAttribute("name", "speed");
+speed.setAttribute("id", "speed");
+
+speed_button.setAttribute("type", "button");
+speed_button.setAttribute("id", "speed_button");
+
+speed_value.setAttribute("id", "speed_value");
+
+start_button.setAttribute("type", "button");
+start_button.setAttribute("name", "start");
+start_button.setAttribute("class", "buttons");
+start_button.setAttribute("id", "start");
+
+pause_button.setAttribute("type", "button");
+pause_button.setAttribute("name", "pause");
+pause_button.setAttribute("class", "buttons");
+pause_button.setAttribute("id", "pause");
+
+start_2_button.setAttribute("type", "button");
+start_2_button.setAttribute("name", "start");
+start_2_button.setAttribute("class", "buttons");
+start_2_button.setAttribute("id", "start_2");
+
+reset_button.setAttribute("type", "button");
+reset_button.setAttribute("name", "reset");
+reset_button.setAttribute("class", "buttons");
+reset_button.setAttribute("id", "reset");
+
+//#endregion
+
+//#region setando contents
+
+earth_stay.textContent = "Permanecer na Terra";
+
+space_stay.textContent = "Entrar na Nave"; 
+
+speed_text.textContent = "Escolha a velocidade da viagem:";
+
+start_button.textContent = "Começar";
+
+pause_button.textContent = "Pausar";
+
+start_2_button.textContent = "Retomar";
+
+reset_button.textContent = "Zerar";
+
+speed_value.textContent = `${speed.value}%`;
+
+speed.addEventListener("input", (event)=>{
+
+    speed_value.textContent = `${event.target.value}%`;
+
+});
+
+//#endregion
+
+//#region inserindo objetos
+
+earth_stay.insertAdjacentElement("beforeend", button_text)
+
+left_side.insertAdjacentElement("afterbegin", earth_stay);
+
+content.insertAdjacentElement("afterbegin", space_stay);
+
+speedster.insertAdjacentElement("beforeend", speed_text);
+speedster.insertAdjacentElement("beforeend", speed_2);
+speedster.insertAdjacentElement("beforeend", speed);
+speedster.insertAdjacentElement("beforeend", speed_button);
+speedster.insertAdjacentElement("beforeend", speed_value);
+
+form_main.insertAdjacentElement("beforeend", speedster);
+
+//#endregion
+
+//#region botões
+
+earth_stay.addEventListener("click", ()=>{
+
+    left_side.setAttribute("id", "left_side_on");
+    content.setAttribute("id", "content");
+    top_side.insertAdjacentElement("beforeend", form_main);
+    left_side.removeChild(earth_stay);
+    content.removeChild(space_stay);
+
+})
+
+space_stay.addEventListener("click", ()=>{
+
+    content.setAttribute("id", "content_on_1");
+    left_side.setAttribute("id", "left_side");
+    top_side.insertAdjacentElement("beforeend", form_main);
+    left_side.removeChild(earth_stay);
+    content.removeChild(space_stay);
+
+})
+
+//#endregion
+
+//#endregion
+
+//#region timer
 
 let v;
 let DeltaT_;
@@ -57,14 +212,12 @@ let minute_other = 0;
 let second_other = 0;
 let millisecond_other = 0;
 
-let start = document.querySelector("#start");
-
 let cron_earth;
 let cron_other;
 
-start.addEventListener("click", starter);
-document.form_main.pause.onclick = () => pause();
-document.form_main.reset.onclick = () => reset();
+start_button.addEventListener("click", starter);
+document.form_main.pause_button.onclick = () => pause();
+document.form_main.reset_button.onclick = () => reset();
 
 function starter() {
 
@@ -142,3 +295,5 @@ function timer_other() {
 function returnData(input) {
     return input > 10 ? input : `0${input}`
 }
+
+//#endregion

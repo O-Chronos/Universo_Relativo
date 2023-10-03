@@ -16,11 +16,11 @@
 }
 @font-face {
     font-family: Jedi;
-    src: url(../fonts/jedi/starjedi/Starjhol.ttf);
+    src: url("../fonts/jedi/starjedi/Starjhol.ttf");
 }
 @font-face {
     font-family: TT;
-    src: url(../fonts/TT/TT\ Octosquares\ Trial\ Medium.ttf);
+    src: url("../fonts/TT/TT\ Octosquares\ Trial\ Medium.ttf");
 }
 
 :root{
@@ -71,6 +71,22 @@ body{
     background-image: url("../img/quarto.jfif");
     background-size: cover;
     background-position: -75px;
+    
+}
+
+#left_side_on{
+
+    width: 49.5vw;
+    height: 102.5vh;
+    border-right-style: solid ;
+    border-right-width: 1px;
+    border-right-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white;
+    background-image: url("../img/quarto.jfif");
+    background-size: cover;
+    background-position: -75px;
     z-index: 1;
     box-shadow: 2em 2em 5em lightgoldenrodyellow inset;
 
@@ -85,7 +101,7 @@ body{
     border-bottom-width: 1px;
     border-bottom-color: white;
     width: 49.3vw;
-    height: 102.5vh;;
+    height: 102.5vh;
 
 }
 
@@ -112,6 +128,31 @@ body{
     background-size: cover;
     background-position: 0px;
 
+}
+
+#content_on_1{
+
+    width: 49.3vw;
+    height: 102.5vh;
+    position: relative;
+    background-image: url("../img/galaxia.jfif");
+    background-size: cover;
+    background-position: 0px;
+    z-index: 1;
+    box-shadow: 2em 2em 5em rgb(0, 183, 255) inset;
+
+}
+
+#content_on_2{
+
+    width: 49.3vw;
+    height: 102.5vh;
+    position: relative;
+    background-image: url("../img/galaxia_2.png");
+    background-size: cover;
+    background-position: 0px;
+    z-index: 1;
+    box-shadow: 2em 2em 5em rgb(179, 0, 255) inset;
 
 }
 
@@ -174,9 +215,11 @@ body{
 #earth-stay{
 
     position: absolute;
+    text-align: center;
     width: 20vw;
     height: 15vh;
     background-color: transparent;
+    line-height: 3vh;
     border: none;
     left: 15vw;
     top: 12vh;
@@ -185,6 +228,12 @@ body{
     font-family: Pixel;
     font-size: 1.3vw;
     
+}
+
+#button_text{
+
+    margin-top: -0.5vh;
+
 }
 
 #earth-stay:hover{
@@ -198,7 +247,7 @@ body{
 
     text-shadow: 0 0 1em white;
     font-family: Trans;
-    font-size: 2.5vw;
+    font-size: 2.3vw;
     position: absolute;
     width: 20vw;
     height: 15vh;
@@ -423,11 +472,60 @@ body{
     left: 36vw;
     background-image: url("../img/aba.png");
     background-size: 50vh;
+    animation: surgir 0.05s forwards linear;
+    animation-iteration-count: unset;
 
+}
+
+#speed{
+
+    width: 23vw;
+    height: 5vh;
+    position: relative;
+    top: 3vh;
+    background-color: #252525;
+    left: -0vw;
+    font-size: x-large;
+    
+}
+
+#speed_value{
+
+    position: relative;
+    top: -10vh;
+    right: 3vw;
+    font-family: Nasa;
+    font-size: 3vw;
+
+}
+
+#speed_button{
+
+    position: relative;
+    top: 4vh;
+    left: 8vw;
+    border-radius: 100%;
+    width: 10vh;
+    height: 10vh;
+    background-image: url("../img/button_play.png");
+    background-size: cover;
+    background-color: transparent;
+    z-index: 2;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0.2vw;
+
+}
+
+#speed_button:hover{
+
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 #speed_text{
 
+    font-family: Nasa;;
     margin-top: 10vh;
     margin-left: 1vw;
     margin-right: 1vw;
@@ -463,5 +561,12 @@ body{
         transform: rotate(360deg);
 
     }
+
+}
+
+@keyframes surgir {
+    
+    from{left: -10vw;}
+    to{left: 36vw}
 
 }
