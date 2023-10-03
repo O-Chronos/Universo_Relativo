@@ -197,6 +197,8 @@ function starter() {
     cron_earth = setInterval(() => { timer_earth(); }, DeltaT);
     cron_other = setInterval(() => { timer_other(); }, DeltaT_);
     form_main.removeChild(start_button);
+    content.setAttribute("id", "content_on_2");
+    right_side.insertAdjacentElement("afterbegin", back);
     form_main.insertAdjacentElement("beforeend", pause_button);
 
 }
@@ -207,6 +209,8 @@ function starter_2() {
     cron_other = setInterval(() => { timer_other(); }, DeltaT_);
     form_main.removeChild(start_2_button);
     form_main.removeChild(reset_button);
+    content.setAttribute("id", "content_on_2");
+    right_side.insertAdjacentElement("afterbegin", back);
     form_main.insertAdjacentElement("beforeend", pause_button);
 
 }
@@ -245,6 +249,7 @@ function reset() {
     content.insertAdjacentElement("beforeend", space_stay);
     form_main.removeChild(reset_button);
     form_main.removeChild(start_2_button);
+    right_side.removeChild(back)
     top_side.removeChild(form_main);
     
 }
@@ -335,10 +340,10 @@ speed_button.addEventListener("click", ()=>{
     if(speed.value < 100){
 
         if(earth_s == true){
-            let num = speed.value/100;
+            let num = (speed.value/100);
             let v = C*num;
             console.log(v)
-            DeltaT = 10.1;
+            DeltaT = 10;
             DeltaT_ = DeltaT / (Math.sqrt(1 - Math.pow(v / C, 2)));
             form_main.insertAdjacentElement("beforeend", start_button);
             form_main.removeChild(speedster);
@@ -349,8 +354,8 @@ speed_button.addEventListener("click", ()=>{
             let num = (speed.value/100);
             let v = C*num;
             console.log(v)
-            DeltaT_ = 10.1;
-            DeltaT = (DeltaT_ / (Math.sqrt(1 - Math.pow(v / C, 2))))/(3.38);
+            DeltaT_ = 10;
+            DeltaT = (DeltaT_*(Math.sqrt(1 - Math.pow(v / C, 2))));
             form_main.insertAdjacentElement("beforeend", start_button);
             form_main.removeChild(speedster)
             console.log(DeltaT) 
@@ -360,21 +365,21 @@ speed_button.addEventListener("click", ()=>{
     if(speed.value >= 100) {
 
         if(earth_s == true){
-            let num = 0.9999999999999;
+            let num = 1;
             console.log(num)
             let v = C*num;
-            DeltaT = 10.1;
+            DeltaT = 10;
             DeltaT_ = DeltaT / (Math.sqrt(1 - Math.pow(v / C, 2)));
             form_main.insertAdjacentElement("beforeend", start_button);
             form_main.removeChild(speedster);
         };
         if(space_s == true){
 
-            let num = -0.9999999999999;
+            let num = 0.9999999999999;
             console.log(num)
             let v = C*num;
-            DeltaT_ = 10.1;
-            DeltaT = (DeltaT_ / (Math.sqrt(1 - Math.pow(v / C, 2)))) * (-0.5);
+            DeltaT_ = 10;
+            DeltaT = (DeltaT_ * (Math.sqrt(1 - Math.pow(v / C, 2))));
             form_main.insertAdjacentElement("beforeend", start_button);
             form_main.removeChild(speedster); 
 
