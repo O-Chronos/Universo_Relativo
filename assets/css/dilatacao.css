@@ -70,7 +70,7 @@ body{
     border-bottom-color: white;
     background-image: url("../img/quarto.jfif");
     background-size: cover;
-    background-position: -75px;
+    background-position: -0vw;
     
 }
 
@@ -86,7 +86,7 @@ body{
     border-bottom-color: white;
     background-image: url("../img/quarto.jfif");
     background-size: cover;
-    background-position: -75px;
+    background-position: -0vw;
     z-index: 1;
     box-shadow: 2em 2em 5em lightgoldenrodyellow inset;
 
@@ -158,8 +158,6 @@ body{
 
 #relogio-1, #relogio-2{
 
-    
-    
     text-align: center;
     position: relative;
     
@@ -172,8 +170,8 @@ body{
     line-height: 3vw;
     color: green;
     text-shadow: 0 0 0.5em green;
-    top: 53vh;
-    left: 10.99vw;
+    top: 52.9vh;
+    left: 14.3vw;
     width: 4.8vw;
     height: 5.5vh;
 
@@ -375,7 +373,7 @@ body{
     text-shadow: 0 0 1em blue;
     z-index: 2;
     position: absolute;
-    right: 41.5vw;
+    right: 40.63vw;
     top: 70vh;
     width: 9vw;
     height: 7vw;
@@ -568,5 +566,12 @@ body{
     
     from{left: -10vw;}
     to{left: 36vw}
+
+}
+
+@keyframes fade_in {
+
+    from{opacity: 0}
+    to{opacity: 1}
 
 }

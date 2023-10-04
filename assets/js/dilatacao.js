@@ -21,8 +21,9 @@ let forcaGSol = (G*SolM)/Math.pow(SolR, 2);
 let forcaGNetuno = (G*NetunoM)/Math.pow(NetunoR, 2);
 let forcaGTerra = (G*TerraM)/Math.pow(TerraR, 2);
 
-
-let DeltaT = 10.1;
+let DeltaT;
+let space_s;
+let earth_s;
 
 console.log(forcaGTerra.toFixed(1));
 console.log(forcaGNetuno.toFixed(1));
@@ -98,6 +99,7 @@ speed_2.setAttribute("id", "speed_2");
 speed.setAttribute("type", "range");
 speed.setAttribute("name", "speed");
 speed.setAttribute("id", "speed");
+speed.setAttribute("max", "100")
 
 speed_button.setAttribute("type", "button");
 speed_button.setAttribute("id", "speed_button");
@@ -166,42 +168,12 @@ speedster.insertAdjacentElement("beforeend", speed);
 speedster.insertAdjacentElement("beforeend", speed_button);
 speedster.insertAdjacentElement("beforeend", speed_value);
 
-form_main.insertAdjacentElement("beforeend", speedster);
 
 //#endregion
 
 //#region botões
 
-earth_stay.addEventListener("click", ()=>{
-
-    left_side.setAttribute("id", "left_side_on");
-    content.setAttribute("id", "content");
-    top_side.insertAdjacentElement("beforeend", form_main);
-    left_side.removeChild(earth_stay);
-    content.removeChild(space_stay);
-
-})
-
-space_stay.addEventListener("click", ()=>{
-
-    content.setAttribute("id", "content_on_1");
-    left_side.setAttribute("id", "left_side");
-    top_side.insertAdjacentElement("beforeend", form_main);
-    left_side.removeChild(earth_stay);
-    content.removeChild(space_stay);
-
-})
-
-//#endregion
-
-//#endregion
-
 //#region timer
-
-let v;
-let DeltaT_;
-v = C*0.5;
-DeltaT_ = DeltaT / (Math.sqrt(1 - Math.pow(v / C, 2)));
 
 let hour_earth = 0;
 let minute_earth = 0;
@@ -216,41 +188,69 @@ let cron_earth;
 let cron_other;
 
 start_button.addEventListener("click", starter);
-document.form_main.pause_button.onclick = () => pause();
-document.form_main.reset_button.onclick = () => reset();
+start_2_button.addEventListener("click", starter_2);
+pause_button.addEventListener("click", pause);
+reset_button.addEventListener("click", reset);
 
 function starter() {
 
-    console.log(DeltaT_1)
-    console.log(DeltaT_2)
-    pause();
-    cron_earth = setInterval(() => { timer_earth(); }, DeltaT_1);
+    cron_earth = setInterval(() => { timer_earth(); }, DeltaT);
     cron_other = setInterval(() => { timer_other(); }, DeltaT_);
+    form_main.removeChild(start_button);
+    content.setAttribute("id", "content_on_2");
+    right_side.insertAdjacentElement("afterbegin", back);
+    form_main.insertAdjacentElement("beforeend", pause_button);
+
+}
+
+function starter_2() {
+
+    cron_earth = setInterval(() => { timer_earth(); }, DeltaT);
+    cron_other = setInterval(() => { timer_other(); }, DeltaT_);
+    form_main.removeChild(start_2_button);
+    form_main.removeChild(reset_button);
+    content.setAttribute("id", "content_on_2");
+    right_side.insertAdjacentElement("afterbegin", back);
+    form_main.insertAdjacentElement("beforeend", pause_button);
+
 }
 
 function pause() {
     clearInterval(cron_earth);
     clearInterval(cron_other);
+    form_main.removeChild(pause_button);
+    form_main.insertAdjacentElement("beforeend", start_2_button);
+    form_main.insertAdjacentElement("beforeend", reset_button);
+
 }
 
 function reset() {
-     hour_earth = 0;
-     minute_earth = 0;
-     second_earth = 0;
-     millisecond_earth = 0;
-     hour_other = 0;
-     minute_other = 0;
-     second_other = 0;
-     millisecond_other = 0;
-     document.getElementById('hour-other').innerText = '00';
-     document.getElementById('minute-other').innerText = '00';
-     document.getElementById('second-other').innerText = '00';
-     document.getElementById('millisecond-other').innerText = '000';
+    hour_earth = 0;
+    minute_earth = 0;
+    second_earth = 0;
+    millisecond_earth = 0;
+    hour_other = 0;
+    minute_other = 0;
+    second_other = 0;
+    millisecond_other = 0;
+    document.getElementById('hour-other').innerText = '00';
+    document.getElementById('minute-other').innerText = '00';
+    document.getElementById('second-other').innerText = '00';
+    document.getElementById('millisecond-other').innerText = '000';
 
     document.getElementById('hour-earth').innerText = '00';
     document.getElementById('minute-earth').innerText = '00';
     document.getElementById('second-earth').innerText = '00';
-    document.getElementById('millisecond-earth').innerText = '000';
+
+    
+    left_side.setAttribute("id", "left_side");
+    content.setAttribute("id", "content");
+    left_side.insertAdjacentElement("beforeend", earth_stay);
+    content.insertAdjacentElement("beforeend", space_stay);
+    form_main.removeChild(reset_button);
+    form_main.removeChild(start_2_button);
+    right_side.removeChild(back)
+    top_side.removeChild(form_main);
     
 }
 function timer_earth() {
@@ -269,7 +269,6 @@ function timer_earth() {
     document.getElementById('hour-earth').innerText = returnData(hour_earth);
     document.getElementById('minute-earth').innerText = returnData(minute_earth);
     document.getElementById('second-earth').innerText = returnData(second_earth);
-    document.getElementById('millisecond-earth').innerText = returnData(millisecond_earth);
     }
 function timer_other() {
 
@@ -289,7 +288,18 @@ function timer_other() {
     document.getElementById('hour-other').innerText = returnData(hour_other);
     document.getElementById('minute-other').innerText = returnData(minute_other);
     document.getElementById('second-other').innerText = returnData(second_other);
-    document.getElementById('millisecond-other').innerText = returnData(millisecond_other);
+
+    if(millisecond_other < 100){
+
+        document.getElementById('millisecond-other').innerText = `0${millisecond_other}`;
+    
+    }
+
+    if(millisecond_other >= 100){
+
+        document.getElementById('millisecond-other').innerText = millisecond_other;
+        
+    }
 }
 
 function returnData(input) {
@@ -297,3 +307,91 @@ function returnData(input) {
 }
 
 //#endregion
+
+earth_stay.addEventListener("click", ()=>{
+
+    form_main.insertAdjacentElement("beforeend", speedster);
+    left_side.setAttribute("id", "left_side_on");
+    content.setAttribute("id", "content");
+    top_side.insertAdjacentElement("beforeend", form_main);
+    left_side.removeChild(earth_stay);
+    content.removeChild(space_stay);
+    earth_s = true;
+    space_s = false;
+
+})
+
+space_stay.addEventListener("click", ()=>{
+
+    form_main.insertAdjacentElement("beforeend", speedster);
+    content.setAttribute("id", "content_on_1");
+    left_side.setAttribute("id", "left_side");
+    top_side.insertAdjacentElement("beforeend", form_main);
+    left_side.removeChild(earth_stay);
+    content.removeChild(space_stay);
+    earth_s = false;
+    space_s = true;
+
+})
+
+speed_button.addEventListener("click", ()=>{
+    console.log(earth_s);
+    console.log(space_s);
+    if(speed.value < 100){
+
+        if(earth_s == true){
+            let num = (speed.value/100);
+            let v = C*num;
+            console.log(v)
+            DeltaT = 10;
+            DeltaT_ = DeltaT / (Math.sqrt(1 - Math.pow(v / C, 2)));
+            form_main.insertAdjacentElement("beforeend", start_button);
+            form_main.removeChild(speedster);
+            console.log(DeltaT_);
+        };
+        if(space_s == true){
+
+            let num = (speed.value/100);
+            let v = C*num;
+            console.log(v)
+            DeltaT_ = 10;
+            DeltaT = (DeltaT_*(Math.sqrt(1 - Math.pow(v / C, 2))));
+            form_main.insertAdjacentElement("beforeend", start_button);
+            form_main.removeChild(speedster)
+            console.log(DeltaT) 
+
+        };
+    }
+    if(speed.value >= 100) {
+
+        if(earth_s == true){
+            let num = 1;
+            console.log(num)
+            let v = C*num;
+            DeltaT = 10;
+            DeltaT_ = DeltaT / (Math.sqrt(1 - Math.pow(v / C, 2)));
+            form_main.insertAdjacentElement("beforeend", start_button);
+            form_main.removeChild(speedster);
+        };
+        if(space_s == true){
+
+            let num = 0.9999999999999;
+            console.log(num)
+            let v = C*num;
+            DeltaT_ = 10;
+            DeltaT = (DeltaT_ * (Math.sqrt(1 - Math.pow(v / C, 2))));
+            form_main.insertAdjacentElement("beforeend", start_button);
+            form_main.removeChild(speedster); 
+
+        }
+
+    }
+    
+
+})
+
+//#endregion
+
+//#endregion
+
+
