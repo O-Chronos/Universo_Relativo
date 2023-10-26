@@ -30,6 +30,12 @@
 
 }
 
+html{
+
+    scroll-behavior: smooth;
+
+}
+
 body{
 
     animation-name: fade_in;
@@ -171,11 +177,49 @@ body{
     color: green;
     text-shadow: 0 0 0.5em green;
     top: 52.9vh;
-    left: 14.3vw;
+    left: 16vw;
     width: 4.8vw;
     height: 5.5vh;
 
 }
+
+#tempo_1, #tempo_2, #stay_1, #stay_2{
+
+    width: 2vw;
+    height: 2vw;
+    z-index: 2;
+    position: absolute;
+
+}
+
+#tempo_1{
+
+    top: 45.8vh;
+    left: 17.5vw;
+
+}
+
+#tempo_2{
+
+    top: 41vh;
+    left: 26.5vw;
+
+}
+
+#stay_1{
+
+    top: 8vh;
+    left: 24vw;
+
+}
+
+#stay_2{
+
+    top: 11vh;
+    right: 21vw;
+
+}
+
 
 #relogio-2{
 
@@ -523,7 +567,7 @@ body{
 
 #speed_text{
 
-    font-family: Nasa;;
+    font-family: Nasa;
     margin-top: 10vh;
     margin-left: 1vw;
     margin-right: 1vw;

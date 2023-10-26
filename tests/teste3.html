@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distorção do Espaço-Tempo</title>
+    <script src="teste3.js" async></script>
+    <script src="../node_modules/big.js/big.js" async></script>
+    <link href="teste3.css" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <div id="top_side">
+      <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" id="bola3">
+        <circle cx="30" cy="30" r="5" fill="red" />
+      </svg>  
+      <svg width="1480" height="300" xmlns="http://www.w3.org/2000/svg" id="linha2">
+        <line id="linha" x1="0" y1="150" x2="1480" y2="150" stroke="white" stroke-width="5" />
+      </svg>
+      
+      <div id="options">
+
+        <h2 id="title">Selecione o Planeta/Estrela</h2>
+
+        <div id="box">
+          <div id="box1">
+            <label for="selecao"></label>
+            <select name="selecao" value="Planeta" id="selecao" > 
+
+              <option class="option" value="">Selecione</option>
+              <option class="option" value="0">Sol</option>
+              <option class="option" value="1">Mercurio</option>
+              <option class="option" value="2">Venus</option>
+              <option class="option" value="3">Terra</option>
+              <option class="option" value="4">Marte</option>
+              <option class="option" value="5">Jupiter</option>
+              <option class="option" value="6">Saturno</option>
+              <option class="option" value="7">Urano</option>
+              <option class="option" value="8">Netuno</option>
+              <option class="option" value="9">Sagitarius B</option>
+
+            </select>
+            <p class="texto" id="nome">Nome:</p>
+            <p class="texto" id="massa">Massa:</p>
+            <p class="texto" id="raio">Raio:</p>
+            
+          </div>
+
+          <div id="box2">
+
+            <p id="time">Informe o tempo a ser decorrido:(Segundos)</p>
+
+            <div id="box3">
+              <input type="number" id="number"><br>
+              <button id="submit">
+            </div>
+          </div>
+      
+        </div>
+      </div>
+
+      <div id="bola1"></div>
+      <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" id="bola2">
+        <circle cx="30" cy="30" r="5" fill="red" />
+      </svg>  
+      <svg width="1480" height="200" xmlns="http://www.w3.org/2000/svg" id="linha1">
+        <polyline points="0,50 10,50 20,50 30,50 40,50 50,50 60,50 70,50 80,50
+        90,50 100,50 110,50 120,50 130,50 140,50 150,50 160,50 170,50 180,50 
+        190,50 200,50 210,50 220,50 230,50 240,50 250,50 260,50 270,50 280,50 
+        290,50 300,50 310,50 320,50 330,50 340,50 350,50 360,50 370,50 380,50 
+        390,50 400,50 410,50 420,50 430,50 440,50 450,50 460,50 470,50 480,50 
+        490,50 500,50 510,50 520,50 530,50 540,50 550,50 560,50 570,50 580,50 
+        590,50 600,50 610,50 620,50 630,50 640,50 650,50 
+        
+        660,60 670,75 680,100 
+        
+        690,130 700,160 710,165 720,170 730,170 740,170 750,170 760,165 770,160 
+        780,130 
+        
+        790,100 800,75 810,60 
+        
+        820,50 830,50 840,50 850,50 860,50 870,50 880,50 
+        890,50 900,50 910,50 920,50 930,50 940,50 950,50 960,50 970,50 980,50 
+        990,50 1000,50 1010,50 1020,50 1030,50 1040,50 1050,50 1060,50 1070,50 
+        1080,50 1090,50 1100,50 1110,50 1120,50 1130,50 1140,50 1150,50 1160,50 
+        1170,50 1180,50 1190,50 1200,50 1210,50 1220,50 1230,50 1240,50 1250,50 
+        1260,50 1270,50 1280,50 1290,50 1300,50 1310,50 1320,50 1330,50 1340,50 
+        1350,50 1360,50 1370,50 1380,50 1390,50 1400,50 1410,50 1420,50 1430,50 
+        1440,50 1450,50 1460,50 1470,50 1480,50" 
+        fill="none" stroke="white" stroke-width="5" />
+      </svg>  
+    </div>
+
+    <div id="bottom_side">
+
+      <h1 id="title">Dilatação do Espaço-Tempo</h1>
+      
+      <p id="text1"></p>
+      
+      <h2 id="subtitle">Passo 1: Escolha do Corpo Massivo</h2>
+
+      <p id="text2">Na página inicial, você encontrará uma lista de opções de corpos massivos: os planetas do sistema solar e um buraco negro fictício chamado "Sagitarius B".
+        <br>
+        Clique no corpo massivo que deseja explorar. Ao fazer isso, uma representação visual do corpo massivo será exibida na tela.
+        <br>
+        Abaixo da representação visual, você verá informações sobre o corpo massivo escolhido, incluindo o nome, massa e raio.
+      </p>
+      
+      <h2 id="subtitle2">Passo 2: Escolha do Intervalo de Tempo</h2>
+      
+      <p id="text3">
+        Após selecionar o corpo massivo, você poderá escolher o intervalo de tempo que uma partícula de luz demora para percorrer as linhas do espaço-tempo deformado pelo corpo massivo.
+        <br>
+        Utilize os controles deslizantes ou insira manualmente o valor do intervalo de tempo desejado.
+
+      </p>
+      
+      <h2 id="subtitle3">Passo 3: Observação da Deformação do Espaço-Tempo</h2>
+      
+      <p id="text4">
+        Uma vez definido o intervalo de tempo, observe as duas representações das linhas do tecido do espaço-tempo: uma linha reta no vácuo e outra deformada pela presença do corpo massivo.
+        <br>
+        Você notará como a gravidade do corpo massivo influencia a trajetória das linhas, demonstrando a curvatura do espaço-tempo.
+      </p>
+
+    </div>
+
+  </div>  
+</body>
+</html>

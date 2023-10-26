@@ -1,0 +1,328 @@
+:root{
+
+    --time-earth: 0s;
+    --c: 0s;
+    --a: 0s;
+    --b: 0s;
+
+}
+
+@font-face {
+    font-family: Jedi;
+    src: url("../assets/fonts/jedi/starjedi/Starjhol.ttf");
+}
+
+@font-face {
+    font-family: Nasa;
+    src: url(../assets/fonts/nasalization-rg.otf);
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#options{
+
+    text-align: center;
+    width: 35vw;
+    height: 30vh;
+    background-color: none;
+    position: absolute;
+    top: 34vh;
+    left: 31.5vw;
+    border-width: 1vh;
+    border-color: yellow;
+    border-style: double;
+    box-shadow: 0 0 1em yellow;
+
+}
+
+#box{
+
+    display: flex;
+
+
+}
+
+#box1{
+
+    width: 50%;
+    height: 21vh;
+    border-right: 1%;
+    border-color: yellow;
+    border-right-style: solid;
+
+}
+
+#massa{
+
+    line-height: 2.7vh;
+
+}
+
+
+#box2{
+
+    width: 50%;
+
+}
+
+#title{
+
+    text-shadow: 0 0 1em yellow;
+    font-family: Jedi;
+    color: yellow;
+    font-size: 3.3vh;
+    margin-top: 2%;
+
+}
+
+#selecao{
+
+
+    font-size: larger;
+
+}
+
+.texto{
+
+    text-shadow: 0 0 1em yellow;
+    font-family: Nasa;
+    color: yellow;
+    font-size: 2.689vh;
+    line-height: 1vh;
+
+}
+
+#container{
+
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/img/universe.jpg);
+    background-size: cover;
+
+}
+
+#time{
+
+    text-shadow: 0 0 1em yellow;
+    font-family: Nasa;
+    color: #ffff00;
+    font-size: 3vh;
+    margin-left: 0%;
+    margin-top: 0;
+    margin-bottom: -0%;
+
+}
+
+#number{
+
+    font-size: x-large;
+    width: 60%;
+    margin-left: 5%;
+    height: 5vh;
+    margin-top: 8%;
+    font-family: Nasa;
+
+}
+
+#submit{
+
+    font-family: Nasa;
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 100%;
+    background-image: url("../assets/img/button-play_yellow.png");
+    background-size: cover;
+    background-color: transparent;
+    border: none
+
+}
+
+#submit:hover{
+
+    cursor: pointer;
+
+}
+
+#box3{
+
+    display: flex;
+
+}
+
+#linha1{
+
+    position: absolute;
+    top: 70vh;
+    left: 1%;
+
+}
+
+#linha2{
+
+    position: absolute;
+    left: 1%;
+    top: 5vh;
+
+}
+
+#bola1{
+
+    top: 80vh;
+    position: absolute;
+    left: 46.2%;
+    border-radius: 100%;
+    width: 87px;
+    height: 87px;
+    background-image: url("../assets/img/terra.jpg");
+    background-size: cover;
+    animation:  1s;
+    animation-iteration-count: unset;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+}
+
+
+
+#bola2{
+
+    z-index: 2;
+    top: 72.5vh;
+    position: absolute;
+    left: -15px;
+    animation-iteration-count: unset;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+}
+
+#bola2a{
+
+    z-index: 2;
+    top: 72.5vh;
+    position: absolute;
+    left: 5px;
+    animation: bola var(--a);
+    animation-iteration-count: unset;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+}
+
+#bola2b{
+
+    z-index: 2;
+    top: 72.5vh;
+    position: absolute;
+    left: 615px;
+    animation: bolab var(--b);
+    animation-iteration-count: unset;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+}
+
+#bola2c{
+
+    z-index: 2;
+    top: 72.5vh;
+    position: absolute;
+    left: 885px;
+    animation: bolac var(--c);
+    animation-iteration-count: unset;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+}
+
+
+#bola3{
+
+    z-index: 2;
+    top: 19.8vh;
+    position: absolute;
+    left: -15px;
+
+}
+
+#bola3a{
+
+    z-index: 2;
+    top: 19.8vh;
+    position: absolute;
+    left: -15px;
+    animation: bola2 var(--time-earth);
+    animation-iteration-count: unset;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes bola {
+    
+    0%{left: -15px}
+    100%{left:635px}
+    
+
+}
+
+@keyframes bolab {
+    
+    0%{left: 635px; margin-top: 0px;}
+    5.8%{left: 645px; margin-top: 10px;}
+    11.7%{left:655px; margin-top: 25px;}
+    17.6%{left:665px; margin-top: 50px;}
+    23.5%{left:675px; margin-top: 80px;}
+    29.4%{left:685px; margin-top: 110px;}
+    35.3%{left:695px; margin-top: 115px;}
+    41.1%{left:705px; margin-top: 120px;}
+    48.6%{left:715px; margin-top: 120px;}
+    47%{left:725px; margin-top: 120px;}
+    52.9%{left:735px; margin-top: 120px;}
+    58.8%{left:745px; margin-top: 115px;}
+    64.7%{left:755px; margin-top: 110px;}
+    70.5%{left:765px; margin-top: 80px;}
+    76.4%{left:775px; margin-top: 50px;}
+    82.3%{left:785px; margin-top: 25px;}
+    88.2%{left:795px; margin-top: 10px;}
+    100%{left:805px; margin-top: 0px;}
+    
+}
+
+@keyframes bolac {
+    
+    0%{left:805px; margin-top: 0px;}
+    100%{left:1465px}
+
+}
+
+
+@keyframes bola2 {
+    
+    0%{left: -15px}
+    
+    100%{left:1465px}
+
+}
+
+@keyframes cair {
+    
+    from{
+
+        top: 50vh;
+
+    }
+
+    to{
+
+        top: 80vh;
+
+    }
+
+}
